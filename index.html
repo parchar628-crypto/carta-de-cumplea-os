@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff6b9a">
+  <meta name="description" content="Carta de cumpleaños interactiva.">
+  <title>Una carta para ti 💖</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/images/portada.svg" type="image/svg+xml">
+</head>
+<body>
+  <div id="particles" aria-hidden="true"></div>
+
+  <main class="page">
+    <section class="intro" id="inicio">
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope-shadow"></div>
+        <button class="envelope" id="openEnvelope" aria-label="Abrir carta">
+          <span class="envelope-flap"></span>
+          <span class="envelope-paper"></span>
+          <span class="envelope-heart">♥</span>
+        </button>
+        <p class="tap-hint">Toca para abrir 💌</p>
+      </div>
+    </section>
+
+    <section class="letter hidden" id="letter">
+      <div class="hero-card card-glow">
+        <div class="badge">PARA TI ✨</div>
+        <h1 id="saludo"></h1>
+        <p class="subtitle" id="subtitulo"></p>
+        <div class="hero-photo-frame">
+          <img id="portada" src="" alt="Foto de cumpleaños">
+          <div class="photo-shine"></div>
+        </div>
+        <button class="primary-btn" id="surpriseBtn">Abrir una sorpresa 🎁</button>
+      </div>
+
+      <section class="message-card card-glow" id="mensajeSection">
+        <div class="section-title">💌 Un mensaje para ti</div>
+        <p id="mensaje"></p>
+        <div class="signature" id="firma"></div>
+      </section>
+
+      <section class="gallery-section">
+        <div class="section-title">📸 Nuestros recuerdos</div>
+        <div class="gallery" id="gallery"></div>
+      </section>
+
+      <section class="wishes-card card-glow" id="wishes">
+        <div class="section-title">🌟 Deseos para este nuevo año</div>
+        <div class="wish-list" id="wishList"></div>
+      </section>
+
+      <section class="final-card" id="finalCard">
+        <div class="cake">🎂</div>
+        <h2 id="finalName"></h2>
+        <p>Que hoy, mañana y todos los días tengas muchas razones para ser feliz. ✨</p>
+        <button class="primary-btn" id="confettiBtn">¡Llenemos la pantalla de felicidad! 🎉</button>
+        <button class="ghost-btn" id="topBtn">Volver al inicio ↑</button>
+      </section>
+
+      <footer>Hecho con mucho cariño 💗 · Todo funciona sin internet.</footer>
+    </section>
+  </main>
+
+  <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="close-lightbox" id="closeLightbox" aria-label="Cerrar">×</button>
+    <img id="lightboxImg" src="" alt="Imagen ampliada">
+    <p id="lightboxText"></p>
+  </div>
+
+  <div class="toast" id="toast">✨ ¡Sorpresa!</div>
+
+  <script src="config.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

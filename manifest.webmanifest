@@ -1,0 +1,10 @@
+{
+  "name": "Carta de cumpleaños 💖",
+  "short_name": "Carta 💖",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff7fb",
+  "theme_color": "#ff6b9a",
+  "lang": "es",
+  "description": "Carta de cumpleaños interactiva y ligera."
+}
